@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RegistrationForm from './components/reg_form';
 import FreelancerList from './components/cards';
-import { Freelancer } from './Freelancer';
+import { Freelancer } from './components/Freelancer';
 import './index.css'
 
 const App: React.FC = () => {

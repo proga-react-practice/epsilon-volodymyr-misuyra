@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
-import './RegistrationForm.css'; // Імпорт CSS файлу
+import './RegistrationForm.css'; 
+import { Freelancer } from './Freelancer';
 
-interface Freelancer {
-  firstName: string;
-  lastName: string;
-  age: number;
-  skills: string[];
-}
 
 interface Props {
   setFreelancers: React.Dispatch<React.SetStateAction<Freelancer[]>>;
@@ -50,10 +45,9 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
   };
 
   return (
-    <div className="form-container"> {/* Додайте клас з CSS */}
+    <div className="form-container"> 
       <h2>Freelancer Registration</h2>
       <form onSubmit={handleSubmit}>
-        {/* Форма для реєстрації фрілансера */}
         <div>
           <label htmlFor="firstName">First Name:</label><br/>
           <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
