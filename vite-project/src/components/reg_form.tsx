@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './RegistrationForm.css'; 
 import { Freelancer } from './Freelancer';
-
+import SkillsSelect from './SkillSelect'; 
 
 interface Props {
   setFreelancers: React.Dispatch<React.SetStateAction<Freelancer[]>>;
@@ -20,11 +20,6 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedSkills = Array.from(e.target.selectedOptions, option => option.value);
-    setFormData({ ...formData, skills: selectedSkills });
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFreelancers(prevFreelancers => [...prevFreelancers, formData]);
@@ -35,6 +30,7 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
       skills: [],
     });
   };
+
   const handleClearForm = () => {
     setFormData({
       firstName: '',
@@ -62,16 +58,7 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
         </div>
         <div>
           <label htmlFor="skills">Skills:</label><br/>
-          <select id="skills" name="skills" multiple value={formData.skills} onChange={handleSelectChange} required>
-            <option value="HTML">HTML</option>
-            <option value="CSS">CSS</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="React">React</option>
-            <option value="Node.js">Node.js</option>
-            <option value="Django">Django</option>
-            <option value="Delfi">Delfi</option>
-            <option value="SQL">SQL</option>
-          </select>
+          <SkillsSelect selectedSkills={formData.skills} onChange={(e) => setFormData({ ...formData, skills: Array.from(e.target.selectedOptions, option => option.value) })} /> {/* Викликаємо компонент SkillsSelect та передаємо пропси */}
         </div>
         <button type="submit">Register</button>
         <button type="button" onClick={handleClearForm}>Clear</button>
