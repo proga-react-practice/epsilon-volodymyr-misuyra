@@ -41,32 +41,30 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
   };
   
 return (
-  <Box sx={{ml:'15%', mt:'8%'}}> 
+  <Box sx={{ml:'18%', mt:'6%'}}> 
     <InputLabel variant="standard" style={{ fontSize: '38px', color: '#6a0dad', marginBottom: '26px', fontFamily:'Roboto' }}>Freelancer Registration</InputLabel>
     <form onSubmit={handleSubmit}>
       <FormGroup>
-        <div>
+        <Box sx={{mb:'12px'}}>
           <InputLabel htmlFor="firstName">First Name:</InputLabel>
           <TextField type="text" sx={{width:"400px",}} id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
-        </div>
-        <div>
+        </Box>
+        <Box sx={{mb:'12px'}}>
           <InputLabel htmlFor="lastName">Last Name:</InputLabel>
           <TextField type="text" sx={{width:"400px",}} id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
-        </div>
-        <div>
+        </Box>
+        <Box sx={{mb:'12px'}}>
           <InputLabel htmlFor="age">Age:</InputLabel>
           <TextField type="number" sx={{width:"400px",}} id="age" name="age" value={formData.age} onChange={handleInputChange} required />
-        </div>
+        </Box>
         <InputLabel htmlFor="skills">Skills:</InputLabel>
         <SkillsSelect
           selectedSkills={formData.skills}
-          onChange={(skills) => setFormData({ ...formData, skills })}
-        >
+          onChange={(skills) => setFormData({ ...formData, skills })}>
         </SkillsSelect>
-        <Button type="submit" variant="contained" color="primary">Register</Button>
-        <Button type="button" onClick={handleClearForm} variant="contained" color="secondary">Clear</Button>
-      </FormGroup>
-      
+        <Button sx={{mt:'12px', height:'48px'}} type="submit" variant="contained" color="primary">Register</Button>
+        <Button sx={{mt:'12px', height:'48px'}} type="button" onClick={handleClearForm} variant="contained" color="secondary">Clear</Button>
+      </FormGroup> 
     </form>
     </Box>
 );
