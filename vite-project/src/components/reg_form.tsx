@@ -41,11 +41,11 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
   };
   
 return (
-  <Box sx={{ml:'18%', mt:'6%'}}> 
-    <InputLabel variant="standard" style={{ fontSize: '38px', color: '#6a0dad', marginBottom: '26px', fontFamily:'Roboto' }}>Freelancer Registration</InputLabel>
+  <Box sx={{ml:'18%', mt:'6%'}} color="secondary"> 
+    <InputLabel variant="standard" style={{ fontSize: '38px', marginBottom: '26px', fontFamily:'Roboto' }}>Freelancer Registration</InputLabel>
     <form onSubmit={handleSubmit}>
       <FormGroup>
-        <Box sx={{mb:'12px'}}>
+        <Box sx={{mb:'12px'}} >
           <InputLabel htmlFor="firstName">First Name:</InputLabel>
           <TextField type="text" sx={{width:"400px",}} id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
         </Box>

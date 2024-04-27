@@ -1,3 +1,13 @@
 .maindiv{
     display: flex;
 }
+.dark-background {
+    background-color: black; 
+    color: white; 
+  }
+  
+  .light-background {
+    background-color: white; 
+    color: black; 
+  }
+  
