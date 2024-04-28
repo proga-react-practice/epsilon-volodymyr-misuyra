@@ -12,16 +12,16 @@ interface Props {
 
 const FreelancerList: React.FC<Props> = ({ freelancers, onDelete }) => {
   return (
-    <Box sx={{ ml:'13%', mt:'6%' }}>
-      <Typography sx={{ fontSize: '38px', marginBottom: '26px', fontFamily:'Roboto' }}>Registered Freelancers</Typography>
+    <Box sx={{ ml:'16%', mt:'10%' }}>
+      <Typography sx={{ fontSize: '40px', marginBottom: '18px', fontFamily:'Montserrat',}} color="primary"><strong>Registered Freelancers</strong></Typography>
       {freelancers.map((freelancer, index) => (
         <Card key={index} className="freelancer-card" sx={{width:'500px', mb:'24px', height:'180px'}}>
           <CardContent sx={{ p: 2 }}>
-            <Typography variant="h5" sx={{ mb: 1 }}>Freelancer {index + 1}</Typography>
-            <Typography sx={{mt:'12px'}}><strong>Name:</strong> {freelancer.firstName} {freelancer.lastName}</Typography>
-            <Typography sx={{mt:'12px'}}><strong>Age:</strong> {freelancer.age}</Typography>
-            <Typography sx={{mt:'12px'}}><strong>Skills:</strong> {freelancer.skills.join(', ')}</Typography>
-            <IconButton sx={{ml:'420px', mt:'-270px' }} onClick={() => onDelete(index)} color="error"><DeleteIcon /></IconButton>
+            <Typography variant="h5" sx={{ mb: 1,fontFamily:'Montserrat' }}><strong>Freelancer {index + 1}</strong></Typography>
+            <Typography sx={{mt:'12px',fontFamily:'Montserrat'}} ><strong>Name:</strong> {freelancer.firstName} {freelancer.lastName}</Typography>
+            <Typography sx={{mt:'12px',fontFamily:'Montserrat'}}><strong>Age:</strong> {freelancer.age}</Typography>
+            <Typography sx={{mt:'12px',fontFamily:'Montserrat'}}><strong>Skills:</strong> {freelancer.skills.join(', ')}</Typography>
+            <IconButton sx={{ml:'420px', mt:'-270px' }} onClick={() => onDelete(index)} color="primary"><DeleteIcon /></IconButton>
           </CardContent>
         </Card>
       ))}

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { TextField, Button, InputLabel, FormGroup, Box } from '@mui/material'; 
+import { TextField, Button, InputLabel, FormGroup, Box, Typography } from '@mui/material'; 
 import './RegistrationForm.css'; 
 import { Freelancer } from './Freelancer';
 import SkillsSelect from './SkillSelect'; 
+
 
 interface Props {
   setFreelancers: React.Dispatch<React.SetStateAction<Freelancer[]>>;
@@ -41,29 +42,29 @@ const RegistrationForm: React.FC<Props> = ({ setFreelancers }) => {
   };
   
 return (
-  <Box sx={{ml:'18%', mt:'6%'}} color="secondary"> 
-    <InputLabel variant="standard" style={{ fontSize: '38px', marginBottom: '26px', fontFamily:'Roboto' }}>Freelancer Registration</InputLabel>
+  <Box sx={{ml:'16%', mt:'10%',width:'495px'}} color="secondary"> 
+    <Typography style={{ fontSize: '40px', marginBottom: '18px', fontFamily:'Montserrat',marginLeft:'-18px'}} color="primary"><strong>Freelancer Registration</strong></Typography>
     <form onSubmit={handleSubmit}>
       <FormGroup>
-        <Box sx={{mb:'12px'}} >
-          <InputLabel htmlFor="firstName">First Name:</InputLabel>
-          <TextField type="text" sx={{width:"400px",}} id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
+        <Box sx={{mb:'16px'}} >
+          <InputLabel htmlFor="firstName" sx={{fontFamily:'Montserrat'}}>First Name:</InputLabel>
+          <TextField type="text" sx={{width:"450px",}} id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
         </Box>
         <Box sx={{mb:'12px'}}>
-          <InputLabel htmlFor="lastName">Last Name:</InputLabel>
-          <TextField type="text" sx={{width:"400px",}} id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
+          <InputLabel htmlFor="lastName" sx={{fontFamily:'Montserrat'}}>Last Name:</InputLabel>
+          <TextField type="text" sx={{width:"450px",}} id="lastName" name="lastName" value={formData.lastName} onChange={handleInputChange} required />
         </Box>
         <Box sx={{mb:'12px'}}>
-          <InputLabel htmlFor="age">Age:</InputLabel>
-          <TextField type="number" sx={{width:"400px",}} id="age" name="age" value={formData.age} onChange={handleInputChange} required />
+          <InputLabel htmlFor="age" sx={{fontFamily:'Montserrat'}}>Age:</InputLabel>
+          <TextField type="number" sx={{width:"450px"}} id="age" name="age" value={formData.age} onChange={handleInputChange} required />
         </Box>
-        <InputLabel htmlFor="skills">Skills:</InputLabel>
+        <InputLabel htmlFor="skills" sx={{fontFamily:'Montserrat'}}>Skills:</InputLabel>
         <SkillsSelect
           selectedSkills={formData.skills}
           onChange={(skills) => setFormData({ ...formData, skills })}>
         </SkillsSelect>
-        <Button sx={{mt:'12px', height:'48px'}} type="submit" variant="contained" color="primary">Register</Button>
-        <Button sx={{mt:'12px', height:'48px'}} type="button" onClick={handleClearForm} variant="contained" color="secondary">Clear</Button>
+        <Button sx={{mt:'36px', height:'48px',width:"450px",color:'white',fontSize:'16px',fontFamily:'Montserrat'}} type="submit" variant="contained" color="primary">Register</Button>
+        <Button sx={{mt:'12px', height:'48px',width:"450px", color:'white',fontSize:'16px',fontFamily:'Montserrat'}} type="button" onClick={handleClearForm} variant="contained" color="primary">Clear</Button>
       </FormGroup> 
     </form>
     </Box>

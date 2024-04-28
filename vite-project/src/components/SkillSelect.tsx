@@ -25,7 +25,7 @@ const SkillsSelect: React.FC<SkillsSelectProps> = ({ selectedSkills, onChange })
   };
 
   return (
-    <FormControl fullWidth>
+    <FormControl sx={{height:'48px',width:"450px"}}>
       <InputLabel id="skills-label" onClick={toggleOpen} style={{ cursor: 'pointer' }}></InputLabel>
       <Select
         labelId="skills-label"
