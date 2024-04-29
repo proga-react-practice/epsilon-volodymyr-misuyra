@@ -6,6 +6,7 @@ import { ThemeProvider} from '@mui/material/styles';
 import { lightTheme, darkTheme } from './themes';
 import Switch from '@mui/material/Switch';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Box } from '@mui/material';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +27,7 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className={`maindiv ${darkMode ? 'dark-background' : 'light-background'}`}>
+      <Box className={`maindiv ${darkMode ? 'dark-background' : 'light-background'}`}>
         <Switch
           checked={darkMode}
           onChange={toggleDarkMode}
@@ -35,7 +36,7 @@ const App: React.FC = () => {
         />
         <RegistrationForm setFreelancers={setFreelancers} />
         <FreelancerList freelancers={freelancers} onDelete={handleDelete} />
-      </div>
+      </Box>
     </ThemeProvider>
   );
 };

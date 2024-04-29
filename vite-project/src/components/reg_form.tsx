@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { TextField, Button, InputLabel, FormGroup, Box, Typography } from '@mui/material'; 
-import './RegistrationForm.css'; 
+import { TextField, Button, InputLabel, FormGroup, Box, Typography } from '@mui/material';  
 import { Freelancer } from './Freelancer';
 import SkillsSelect from './SkillSelect'; 
 
@@ -48,7 +47,7 @@ return (
       <FormGroup>
         <Box sx={{mb:'16px'}} >
           <InputLabel htmlFor="firstName" sx={{fontFamily:'Montserrat'}}>First Name:</InputLabel>
-          <TextField type="text" sx={{width:"450px",}} id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
+          <TextField type="text" sx={{width:"450px"}} id="firstName" name="firstName" value={formData.firstName} onChange={handleInputChange} required />
         </Box>
         <Box sx={{mb:'12px'}}>
           <InputLabel htmlFor="lastName" sx={{fontFamily:'Montserrat'}}>Last Name:</InputLabel>
