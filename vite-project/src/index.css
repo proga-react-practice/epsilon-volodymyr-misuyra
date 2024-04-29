@@ -1,6 +1,6 @@
 .maindiv{
     display: flex;
-    flex-wrap: nowrap;
+    
 }
 .dark-background {
     background-color: 232121; 
