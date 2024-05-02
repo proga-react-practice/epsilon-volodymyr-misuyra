@@ -6,7 +6,7 @@ import { ThemeProvider} from '@mui/material/styles';
 import { lightTheme, darkTheme } from './themes';
 import Switch from '@mui/material/Switch';
 import CssBaseline from '@mui/material/CssBaseline';
-import { Box } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -27,15 +27,21 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box className={`maindiv ${darkMode ? 'dark-background' : 'light-background'}`}>
+      <Box>
         <Switch
           checked={darkMode}
           onChange={toggleDarkMode}
           color="primary"
           inputProps={{ 'aria-label': 'toggle dark mode' }}
         />
-        <RegistrationForm setFreelancers={setFreelancers} />
-        <FreelancerList freelancers={freelancers} onDelete={handleDelete} />
+        <Grid container justifyContent="center"   spacing={22}>
+          <Grid item xs={12} md={6} lg={4}>
+            <RegistrationForm setFreelancers={setFreelancers} />
+          </Grid>
+          <Grid item xs={12} md={6} lg={5} >
+            <FreelancerList freelancers={freelancers} onDelete={handleDelete} />
+          </Grid>
+        </Grid>
       </Box>
     </ThemeProvider>
   );
